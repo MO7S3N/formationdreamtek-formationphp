@@ -1,7 +1,7 @@
 <?php
-function nav_item(string $lien, string $titre)
+function nav_item(string $lien, string $titre, string $linkClass='')
 {
-     $classe='nav-item';
+     $classe= 'nav-item';
      if($_SERVER['SCRIPT_NAME']== $lien)
      {
          $classe .= 'active';
@@ -10,8 +10,15 @@ function nav_item(string $lien, string $titre)
 ?>
 
 <li class="<?php $classe; ?>">
-<a class="nav-item" href="<?php $lien; ?>"><?php echo $titre; ?></a>
+<a class="nav-link" href="<?php $lien; ?>"><?php echo $titre; ?></a>
 </li>
 <?php
+}
+?>
+
+<?php
+function nav_menu(string $linkClass='')
+{
+return nav_item('/index.php', 'Acceuil', $linkClass) . nav_item('/contact.php', 'Contact', $linkClass);
 }
 ?>

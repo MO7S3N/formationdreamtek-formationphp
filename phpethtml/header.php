@@ -1,3 +1,5 @@
+<?php require_once 'menu_functions.php'; ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,9 +32,9 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-    <?php
-     require 'menu.php'; 
-     ?>
+        <?php
+        nav_menu('nav-link');
+        ?>
     </ul>
   </div>
 </nav> 

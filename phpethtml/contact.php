@@ -1,6 +1,6 @@
 <?php require 'header.php' ?>
 
 <h2>nous contacter</h2>
-<p>gsrggsrgqgrgsqgsq</p>
+<p>kalamnaa</p>
 
 <?php require 'footer.php'; ?>

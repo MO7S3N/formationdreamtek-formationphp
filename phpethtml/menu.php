@@ -1,4 +1,4 @@
-<?php require_once 'menu_functions.php'; ?>
+<?php require  'menu_functions.php'; ?>
 
-<?php nav_item('/index.php', 'Acceuil'); ?>
-<?php nav_item('/contact.php', 'Contact'); ?>
+<?php nav_item('/index.php', 'Acceuil', $class); ?>
+<?php nav_item('/contact.php', 'Contact', $class); ?>
