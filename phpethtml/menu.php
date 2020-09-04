@@ -1,19 +1,4 @@
-<?php
-function nav_item(string $lien, string $titre)
-{
-     $classe='nav-item';
-     if($_SERVER['SCRIPT_NAME']== $lien)
-     {
-         $classe .= 'active';
-     }
+<?php require_once 'menu_functions.php'; ?>
 
-?>
-
-<li class="<?php $classe; ?>">
-<a class="nav-item" href="<?php $lien; ?>"><?php echo $titre; ?></a>
-</li>
-<?php
-}
-?>
 <?php nav_item('/index.php', 'Acceuil'); ?>
 <?php nav_item('/contact.php', 'Contact'); ?>

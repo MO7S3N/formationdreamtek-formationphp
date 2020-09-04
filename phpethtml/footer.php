@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-4"> 
     <h5>navigation</h5>
     <ul class="list-unstyled text-small">
-       <?php require_once 'menu.php'; ?>
+       <?php require 'menu.php'; ?>
     </ul>
-    </div>
+    </div>  
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
