@@ -1,3 +1,5 @@
+<?php require 'functions.php'; ?>
+
 <?php 
 $adeviner=150;
 $erreur=null;
@@ -20,17 +22,19 @@ if(isset($_GET['chiffre']))
         $value=(int)$_GET['chiffre'];
 }
 
+//checkbox
 $parfums=[
     'fraise'=>4,
     'vanille'=>5,
     'chocolat'=>6
 ];
 
+//radio
 $cornets=[
     'pot'=>2,
     'cornet'=>3
 ];
-
+//checkbox
 $supplement=[
     'pepite de chocolat'=>1,
     'chantille'=>0.5
@@ -59,16 +63,17 @@ elseif($succes):
 
 
 
-
+<h1>composer votre glace</h1>
 <form action="jeu.php" method="GET">
-    <div class="form-group">
-    <input type="number" name="chiffre" placeholder="entre 0 et 1000" value="<?php echo $value; ?>"><br>
-    <input type="text" name="demo" value="test"><br>
-    <input type="checkbox" name="parfum[]" value="fraise">fraise<br>
-    <input type="checkbox" name="parfum[]" value="vanille">vanille<br>
-    <input type="checkbox" name="parfum[]" value="chocolat">chocolat<br>
-    </div>
-    <button type="submit" class="btn btn-primary">Deviner</button>
+    <?php foreach($parfums as $parfum => $prix): ?>
+    <div class="checkbox">
+        <label>
+        <?php checkbox ('parfum', $parfum , $_GET); ?>
+        <?php  echo $parfum; ?> - <?php echo $prix; ?> £
+        </label>
+    </div>    
+    <?php endforeach; ?>   
+    <button type="submit">composer ma classe </button>
 </form>
 
 <pre>
