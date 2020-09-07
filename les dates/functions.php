@@ -28,12 +28,32 @@ function checkbox(string $name, string $value, array $data)
  
  <?php
  function creneaux_html(array $creneaux)
- {
+  {
     $phrases = [];
+   if(empty($creneaux))
+    {
+       return 'fermé'; 
+    }
     foreach($creneaux as $creneau)
     {
         $phrases[]=" de <strong>  $creneau[0] </strong> a $creneau[1]  </strong>";
     }
     return 'Ouvert' . implode('et', $phrases);
  }
+?>
+
+<?php
+function in_creneaux(int $heure, array $creneaux) : bool
+{
+  foreach ($creneaux as $creneau)
+  {
+      $debut=$creneau[0];
+      $fin=$creneau[1];
+      if($heure >= $debut && $heure <  $fin)
+      {
+         return true;
+      }
+  }
+  return false;
+}
 ?>
