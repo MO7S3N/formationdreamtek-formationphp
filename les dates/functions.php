@@ -32,7 +32,8 @@ function checkbox(string $name, string $value, array $data)
     $phrases = [];
     foreach($creneaux as $creneau)
     {
-       $phrases[]="de $creneau[0]h a $creneau[1]h";
+        $phrases[]=" de <strong>  $creneau[0] </strong> a $creneau[1]  </strong>";
     }
+    return 'Ouvert' . implode('et', $phrases);
  }
 ?>
