@@ -10,10 +10,9 @@ function checkbox(string $name, string $value, array $data)
    <input type="checkbox" name="{$name}[]" value="<?php echo $value; ?>" $attributes>
 <?php
 }
-?>
 
-<?php
- function radio(string $name, string $value, array $data)
+
+function radio(string $name, string $value, array $data)
  {$attributes='';
     if (isset($data[$name])&& ($value==$data[$name]))
     {
@@ -24,9 +23,7 @@ function checkbox(string $name, string $value, array $data)
     <input type="radio" name="<?php echo $name ?>" value="<?php echo $value; ?>" $attributes>
  <?php
  }
- ?>
- 
- <?php
+
  function creneaux_html(array $creneaux)
   {
     $phrases = [];
@@ -40,10 +37,8 @@ function checkbox(string $name, string $value, array $data)
     }
     return 'Ouvert' . implode('et', $phrases);
  }
-?>
 
-<?php
-function in_creneaux(int $heure, array $creneaux) : bool
+ function in_creneaux(int $heure, array $creneaux) : bool
 {
   foreach ($creneaux as $creneau)
   {

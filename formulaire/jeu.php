@@ -1,10 +1,9 @@
-<?php require 'functions.php'; ?>
+<?php require 'functions.php'; 
 
-<?php 
-$adeviner=150;
-$erreur=null;
-$succes=null;
-$value=null;
+$adeviner   = 150;
+$erreur     = null;
+$succes     = null;
+$value      = null;
 if(isset($_GET['chiffre']))
 {
         if ($_GET['chiffre'] > $adeviner)
@@ -23,25 +22,25 @@ if(isset($_GET['chiffre']))
 }
 
 //checkbox
-$parfums=[
-    'fraise'=>4,
-    'vanille'=>5,
-    'chocolat'=>6
+$parfums = [
+    'fraise'    => 4,
+    'vanille'   => 5,
+    'chocolat'  => 6
 ];
 
 //radio
-$cornets=[
-    'pot'=>2,
-    'cornet'=>3
+$cornets = [
+    'pot'   => 2,
+    'cornet'=> 3
 ];
 //checkbox
-$supplements=[
-    'pepite de chocolat'=>1,
-    'chantille'=>0.5
+$supplements = [
+    'pepite de chocolat'    => 1,
+    'chantille'             => 0.5
 ];
 
-$ingredients=[];
-$total=0;
+$ingredients    = [];
+$total          = 0;
 if (isset($_GET['parfum']))
 {
     foreach($_GET['parfum'] as $parfum)

@@ -1,4 +1,5 @@
 <?php
+// jour en FR
 define('JOURS',
 [
    'LUNDI',
@@ -10,6 +11,8 @@ define('JOURS',
    'DIMANCHE'
 ]);
 
+// creaneaux Lun, Mar, Mer, Jeu, Ven
+// Sam et Dim => OFF
 define('CRENAUX',[
     [   
     [8,12],

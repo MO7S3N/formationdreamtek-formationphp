@@ -1,14 +1,15 @@
 <?php
 define('JOURS',
 [
-   'LUNDI',
-   'MARDI',
-   'MERCREDI',
-   'JEUDI',
-   'VENDREDi',
-   'SAMEDI',
-   'DIMANCHE'
-]);
+      'LUNDI',
+      'MARDI',
+      'MERCREDI',
+      'JEUDI',
+      'VENDREDi',
+      'SAMEDI',
+      'DIMANCHE'
+]
+);
 
 define('CRENAUX',[
     [   

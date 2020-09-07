@@ -3,10 +3,11 @@ $title="nous contacter";
 require_once 'config.php';
 require 'functions.php';
 date_default_timezone_set('Europe/Paris');
+
 $heure=(int)date('G');
 $creneaux=CRENAUX[date('N')-1];
 $ouvert=in_creneaux($heure, $creneaux);
-$color='green';
+$color= $ouvert ? 'green' : 'red';
 if($ouvert)
 {
     $color='green';

@@ -105,7 +105,7 @@ elseif($succes):
 
 <h1>composer votre glace</h1>
 <div class="row">
-   <div class="col-md-4">
+   <div class="col-md-3">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">votre glace</h5>
@@ -120,7 +120,7 @@ elseif($succes):
             </div>
         </div>
    </div> 
-   <div class="col-md-8">
+   <div class="col-md-6">
         <form action="jeu.php" method="GET">
             <h2>choisissez votre parfum</h2>
             <?php foreach($parfums as $parfum => $prix): ?>
@@ -153,6 +153,14 @@ elseif($succes):
             <button type="submit" class="btn btn-primary">composer ma classe </button>
         </form>
    </div>
+   <div class="col-md-3"> 
+    <h5>navigation</h5>
+    <ul class="list-unstyled text-small">
+       <?php
+       nav_menu();
+       ?>
+    </ul>
+    </div>  
 </div>
 
 <pre>
