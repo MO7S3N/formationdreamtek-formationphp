@@ -1,6 +1,14 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4"></div>
+    <div class="col-md-4"> 
+    <h5>navigation</h5>
+    <ul class="list-unstyled text-small">
+       <?php
+       nav_menu();
+       ?>
+    </ul>
+    </div>  
     
 </div>
 
