@@ -3,6 +3,7 @@ require_once 'class/message.php';
 require_once 'class/GuestBook.php'; 
 
 $errors=null;
+$success=false;
 if((isset($_POST['username']) && ($_POST['message'])))
 {
     $message =new Message($_POST['username'],$_POST['message']);
@@ -10,6 +11,8 @@ if((isset($_POST['username']) && ($_POST['message'])))
         {
             $guestbook=new GuestBook(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'message');
             $guestbook->addmessage($message);
+            $success=true;
+            $_POST = [];
         }
     else
         {
@@ -27,10 +30,17 @@ require 'elements/header.php';
         <div class="alert alert-danger">
            formulaire invalide
         </div>
-    <?php endif; ?>    
+    <?php endif; ?>
+    
+    <?php if ($success): ?>
+        <div class="alert alert-success">
+           merci pour votre message
+        </div>
+    <?php endif ?>
+
     <form action="" method="POST">
         <div class="form-group">
-            <input value="<?php echo $_POST['username']; ?>" type="text" name="username" placeholder="votre pseudo" class="form-control <?php isset($errors['username']) ? 'is-invalid' : '' ?>">
+            <input  type="text" name="username" placeholder="votre pseudo" class="form-control <?php isset($errors['username']) ? 'is-invalid' : '' ?>">
                 <?php if(isset($errors['username'])): ?>
                     <div class="alert alert-danger">
                         <?php echo $errors['username']; ?>
