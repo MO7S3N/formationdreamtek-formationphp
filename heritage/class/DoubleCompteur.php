@@ -8,7 +8,10 @@ class DoubleCompteur extends Compteur
          return 2 * parent::recuperer();
    }
 
-   
+    
 
 }
+
+ 
+
 ?>
