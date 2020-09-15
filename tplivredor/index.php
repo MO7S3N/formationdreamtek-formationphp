@@ -1,6 +1,6 @@
 [<?php
 require_once 'class/message.php'; 
-require_once 'class/GuestBook.php'; 
+require_once 'class/GuestBook.php';
 
 $errors=null;
 $success=false;
@@ -19,6 +19,8 @@ if((isset($_POST['username']) && ($_POST['message'])))
               $errors=$message->getErrors();
         }    
 }
+$guestbook=new GuestBook(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'message');
+$messages=$guestbook->getmessages();
 
 $title="Livre d'or";
 require 'elements/header.php';
@@ -57,6 +59,13 @@ require 'elements/header.php';
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
+    <?php if(!empty($messages)): ?>
+    <h1 class="mt-4">vos messages</h1>
+    <?php foreach($messages as $message): ?>
+        <?php  $message->toHtml() ?>
+    <?php endforeach; ?>
+    <?php endif; ?>
+
 </div>
 
 

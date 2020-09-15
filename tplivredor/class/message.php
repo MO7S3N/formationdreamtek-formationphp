@@ -33,6 +33,19 @@ class Message
         return $errors;
     }
 
+    public function toHtml()
+    {   
+        $username=htmlentities($this->username);
+        $date=$this->date->format('d/m/Y  H:i');
+        $message=htmlentities($this->message);
+    ?>
+        <p>
+            <strong><?php echo $this->username; ?></strong> <em> le <?php echo $date; ?></em><br>
+            <?php echo $message; ?>
+       </p>    
+    <?php
+    }
+
     public function tojson()
     {
       return json_encode  ([
@@ -42,3 +55,7 @@ class Message
         ]);
     }
 }
+
+
+
+?>
