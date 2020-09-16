@@ -6,7 +6,9 @@ require 'elements/header.php'; ?>
 
 <div class="container">
     <ul>
-        <li>03/02/2020 ciel degege 20C</li>
+         <?php foreach($forecast as $day): ?>
+        <li>30/02/2020 ciel degagé 20°C</li>
+         <?php endforeach; ?>
     </ul>
 </div>
 

@@ -10,7 +10,7 @@ class Openweather
 
     public function getforcecast(string $city)
     {
-         $curl=curl_init("http://api.openweathermap.org/data/2.5/weather?q=$city&APPID=$this->apikey");
+         $curl=curl_init("http://api.openweathermap.org/data/2.5/forecast?q=$city&APPID=$this->apikey");
          curl_setopt_array($curl,[
             CURLOPT_CAINFO => __DIR__ . DIRECTORY_SEPARATOR . 'cer.cer',
             CURLOPT_RETURNTRANSFER=>true,
@@ -25,12 +25,11 @@ class Openweather
          }
          $results=[];
          $data=json_decode($data,true);
-         foreach($data['coord'] as $day)
+         foreach($data['list'] as $day)
          {
              $results = [
-                 'temp'=>$day['temp']['day'],
                  'description'=>$day['weather'][0]['description'],
-                 'date'=>new DateTime($day['dt'])
+                 'date'=>new DateTime("@" . $day['dt'])
              ];
          }
          return $results;
