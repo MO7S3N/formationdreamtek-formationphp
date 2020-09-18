@@ -6,8 +6,9 @@ require 'elements/header.php'; ?>
 
 <div class="container">
     <ul>
-         <?php foreach($forecast as $day): ?>
-        <li>30/02/2020 ciel degagé 20°C</li>
+        <?php foreach($forecast as $day): ?>
+        <?php $date = new DateTime("@" . $day['dt']); ?>
+        <li><?php echo $date->format('d/m/Y'); ?> <?php echo $day['weather'][0]['description']; ?></li>
          <?php endforeach; ?>
     </ul>
 </div>
